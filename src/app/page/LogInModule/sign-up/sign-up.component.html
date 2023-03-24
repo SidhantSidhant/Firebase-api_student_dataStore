@@ -1,0 +1,42 @@
+<div class="signUpForm">
+            <form [formGroup]="SignUpForm" (ngSubmit)="onSingUpForm()">
+                
+                <h1>SignUp Form</h1>
+
+                <mat-form-field class="d-block">
+                    <input type="text" id=""  matInput formControlName="userName" placeholder="user Name">
+                    <span *ngIf="f['userName'].hasError('minlength') && f['userName'].touched" class="text-danger">
+                        minimum length is {{f['userName'].getError('minlength').requiredLength}}
+                    </span>
+                    <span >
+
+                    </span>
+                </mat-form-field>
+
+                <mat-form-field class="d-block">
+                    <input type="text" id="" matInput formControlName="email" placeholder="email">
+                    <span *ngIf="f['email'].hasError('emailError') && f['email'].dirty" class="text-danger">
+                        please enter the porper email address
+                    </span>
+                </mat-form-field>
+
+                <mat-form-field class="d-block">
+                    <input type="text" id="" matInput formControlName="password" placeholder="password">
+                    <span class="text-danger" *ngIf="f['password'].hasError('passwordError') && f['password'].dirty ">
+                      {{f['password'].errors?.['passwordError']}}
+                    </span>
+                </mat-form-field>
+
+                <mat-form-field class="d-block">
+                    <input type="text" id="" matInput formControlName="confirmPassword" placeholder="confirmPassword">
+                </mat-form-field>
+
+                <div class="text-right">
+                    <button mat-stroked-button color="primary" [disabled]="SignUpForm.invalid">SignUp</button>
+                </div>
+                <p class="text-danger" style="cursor: pointer;" routerLink="/logIn">
+                    account is alredy exist
+                </p>
+                
+            </form>
+        </div>

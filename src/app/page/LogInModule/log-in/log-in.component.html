@@ -1,0 +1,29 @@
+<div class="logInForm">
+    <form #f="ngForm" (ngSubmit)="onUserLogIn()">
+        <h1>LogIn Form</h1>
+
+        <div class="form-group">
+            <label for="email">email</label>
+            <input type="text" id="" #email="ngModel" name="email" ngModel class="form-control" email
+                placeholder="email" required>
+            <span *ngIf="email?.errors?.['emailError'] && email.touched" class="text-danger">
+                please enter the proper email
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">password</label>
+            <input type="text" id="password" #password name="password" ngModel class="form-control" placeholder="password"
+                required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$">
+        </div>
+
+        <div class="text-right">
+            <button mat-stroked-button>LogIn</button>
+        </div>
+
+        <p class="text-danger" style="cursor : pointer" routerLink="/">
+            user have does not exist account
+        </p>
+
+    </form>
+</div>

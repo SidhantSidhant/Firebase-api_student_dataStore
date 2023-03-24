@@ -1,0 +1,27 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav (click)="sidenav.close()">
+      <button mat-button [routerLink]="['/forms', '']">
+          Add Employ
+      </button>
+  </mat-sidenav>
+  <mat-toolbar color="primary">
+    <button mat-button>
+      <mat-icon (click)="sidenav.open()">
+        menu
+      </mat-icon>
+    </button>
+    <button mat-button>
+      CURD APPLICATIONS
+    </button>
+    <button mat-button [routerLink]="['table']">
+      Table
+    </button>
+    <button mat-button color="warining" class="ml-auto" [routerLink]="['/forms', '']">
+        Add Employ
+    </button>
+    <button mat-button routerLink="/" (click)="isLogOut()">LogOut</button>
+  </mat-toolbar>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

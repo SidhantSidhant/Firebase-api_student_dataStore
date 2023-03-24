@@ -1,0 +1,37 @@
+
+
+// .row{
+//     display : flex;
+//     flex-direction: column;
+
+// }
+.silder{
+    width: 60%;
+
+    // transition: translateY(-5rem);
+    // transition: all;
+    animation : animi .7s ease-in-out;
+    form{
+        width: 85%;
+        margin : 0 auto;
+    }
+}
+@media  all and (min-width){
+  .silder{
+    margin : 0 auto;
+  }
+}
+@media all and (min-width : 600px){
+  
+@keyframes animi{
+  from{
+    transform : translateY(-5rem);
+    opacity : 0;
+  }
+  to{
+    opacity : 1;
+    transform : translateY(1rem)
+  }
+}
+
+}

@@ -1,0 +1,69 @@
+
+<div class="silder">
+    <div class="card mat-elevation-z5">
+       <h1 class="text-uppercase bg-primary p-3 text-center text-white">Student Details Forms</h1>
+    <form  [formGroup]="studentForm" (ngSubmit)="onSubmitstudentForm()">
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field class="d-block" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input type="text"  matInput formControlName="fname" id="fname">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="d-block" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input type="text" matInput formControlName="lname" id="lname">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="d-block" appearance="outline">
+                    <mat-label>email</mat-label>
+                    <input type="text" matInput  formControlName="email" id="email">
+                </mat-form-field>
+            </div>
+                <div class="col-md-6">
+                    <mat-form-field class="d-block" appearance="outline">
+                        <mat-label>Date Of Birth</mat-label>
+                        <input type="text" matInput formControlName="date_of_Birth" id="date_of_Birth">
+                    </mat-form-field>
+                </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  Gender:-  <label for="gender" *ngFor="let gender of gender"> 
+                        <input type="radio" formControlName="gender" [value]="gender" [id]="gender">{{gender}}
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="d-block" appearance="outline">
+                    <mat-label>Eductaion</mat-label>
+                    <input type="text" matInput formControlName="eductaion" id="">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="d-block" appearance="outline">
+                    <mat-label>company</mat-label>
+                    <input type="text" matInput formControlName="company" id="">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="d-block" appearance="outline">
+                    <mat-label>experince</mat-label>
+                    <input type="text" matInput formControlName="experince" id="">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="d-block" appearance="outline">
+                    <mat-label>package</mat-label>
+                    <input type="text" matInput formControlName="package" id="">
+                </mat-form-field>
+            </div>
+        </div>  
+        <div class="text-right">
+            <button mat-button routerLink="/table" >Cancel</button>
+            <button mat-raised-button type="button" type="submit"  color="primary">Save</button>
+        </div>
+    </form>
+   </div>
+</div>
