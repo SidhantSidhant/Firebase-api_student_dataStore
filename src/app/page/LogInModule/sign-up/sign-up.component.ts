@@ -45,6 +45,9 @@ export class SignUpComponent implements OnInit {
       let obj : IuserSignUp = this.SignUpForm.value;
       this._apiService.SingUpUserData(obj).subscribe(res =>{
         console.log(res);
+      
+        localStorage.setItem("email", this.f['email'].value);
+        localStorage.setItem('userName', this.f['userName'].value);
         this._router.navigate(['/forms', ""])
       })
   }
